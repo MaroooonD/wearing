@@ -1,0 +1,15 @@
+<h1>メッセージ一覧</h1>
+
+<% @all_posts.each do |all_post| %>
+  <% @all_users.each do |all_user| %>
+    <table>
+      <tr>
+        <td><%= image_tag all_user.image_url %></td>
+        <td><%= all_user.name %></td>
+        <td><%= all_post.content %></td>
+      </tr>
+    </table>
+  <% end %>
+<% end %>
+
+<%= paginate @all_users %>

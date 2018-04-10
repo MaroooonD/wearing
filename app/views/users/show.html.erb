@@ -1,0 +1,26 @@
+<div class="row">
+    <aside class="col-xs-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= @user.name %></h3>
+        </div>
+        <div class="panel-body profile">
+          <!--<img class="media-object img-rounded img-responsive" src="<#%= gravatar_url(@user, { size: 500 }) %>" alt="">-->
+          <%= image_tag @user.image_url %>
+        </div>
+      </div>
+        <%= render 'relationships/follow_button', user: @user %>
+      </aside>
+      <div class="col-xs-8">
+          <p class="panel-body"><%= @user.profile %></p>
+      </div>
+      <div class="col-xs-12">
+        <ul class="nav nav-tabs nav-justified">
+          <li class="<%= 'active' if current_page?(user_path(@user)) %>"><%= link_to user_path(@user) do %>SELF <span class="badge"><%= @count_posts %></span><% end %></li>
+          <li class="<%= 'active' if current_page?(followings_user_path(@user)) %>"><%= link_to followings_user_path(@user) do %>FOLLOW <span class="badge"><%= @count_followings %></span><% end %></li>
+          <li class="<%= 'active' if current_page?(followers_user_path(@user)) %>"><%= link_to followers_user_path(@user) do %>FOLLOWER <span class="badge"><%= @count_followers %></span><% end %></li>
+          <li class="<%= 'active' if current_page?(likings_user_path(@user)) %>"><%= link_to likings_user_path(@user) do %>NICE<span class="badge"><%= @count_likings %></span><% end %></li>
+        </ul>
+        <%= render 'posts/posts', posts: @posts %>
+      </div>
+  </div>
