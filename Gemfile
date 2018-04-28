@@ -56,3 +56,6 @@ gem 'carrierwave'
 gem 'fog'
 gem 'pry-byebug', group: :development
 gem 'rmagick', :require => 'RMagick'
+group :production do
+  gem 'pg', '0.21.0'
+end
