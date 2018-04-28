@@ -1,0 +1,18 @@
+<h1>コメント一覧</h1>
+
+<% post.comments.each do |comment| %>
+  <% next unless comment.persisted? %><!--DB未保存なcommentオブジェクトだったら、次のループへnext-->
+  <table>
+    <tr>
+      <td><%= image_tag comment.image_url %></td>
+      <td>
+        <!--<#%= comment.inspect %>-->
+        <%= link_to comment.user.name, user_path(comment.user) %>
+      </td>
+      <td><%= comment.content %></td>
+      <% if current_user == comment.user %>
+        <%= link_to "Delete", post_comment_path(post,comment), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+      <% end %>
+    </tr>
+  </table>
+<% end %>

@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405130803) do
+ActiveRecord::Schema.define(version: 20180414064637) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
     t.integer  "user_id"
-    t.integer  "picture_id"
-    t.text     "body",       limit: 65535
+    t.text     "image",      limit: 65535
+    t.integer  "post_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,9 +46,10 @@ ActiveRecord::Schema.define(version: 20180405130803) do
     t.string   "content"
     t.string   "picture"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "comment"
+    t.text     "image",      limit: 65535
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
@@ -69,6 +73,8 @@ ActiveRecord::Schema.define(version: 20180405130803) do
     t.text     "image",           limit: 65535
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
   add_foreign_key "picture_stores", "users"

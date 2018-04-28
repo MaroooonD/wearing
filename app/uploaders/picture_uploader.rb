@@ -1,6 +1,6 @@
 class PictureUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -28,9 +28,9 @@ class PictureUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
   
-  version :thumb do
-    process :resize_to_fit => [400, 200]
-  end
+  # version :thumb do
+  #   process :resize_to_fit => [400, 200]
+  # end
 
 
   def default_url

@@ -10,6 +10,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+    #@posts = @post.comments.order('created_at DESC').page(params[:page])
+  end
+
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
@@ -31,7 +36,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content,:image)
   end
   
   def correct_user

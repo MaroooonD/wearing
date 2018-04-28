@@ -1,22 +1,28 @@
-<ul class="media-list">
+<ul class="media-list post_font">
   <% posts.each do |post| %>
     <li class="media">
-      <div class="media-left">
-        <img class="media-object img-rounded" src="<%= gravatar_url(post.user, options = { size: 100 }) %>" alt="">
+      <div class="media-left posts_img">
+        <%= image_tag @user.image_url %>
       </div>
-      <div class="media-body">
-        <div>
-          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
-        </div>
-        <div>
+      <div class="media-body post-body">
+        <ul>
+          <li class="name_font"><%= link_to "@"+post.user.name, user_path(post.user) %></li>
+          <li class="favorite"><%= render 'favorites/favorite_button',user: @user, post: post %></li>
+        </ul>
+        <div class="post_main">
           <p><%= post.content %></p>
+          <% if post.image.present? %>
+            <p><%= image_tag post.image %></p>
+          <% end %>
         </div>
-        <%= render 'favorites/favorite_button',user: @user, post: post %>
-        <!--<#%= render 'comments/comment_button',user: @user, post: @post %>-->
+        <ul class="post_under">
+         <li class="text-muted font_tc"><%= post.created_at %></li>
+         <li class="post_delete font_tc">
           <% if current_user == post.user %>
             <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
-          <!--<div class="media-right"><#%= image_tag post.image %></div>-->
+          <%= link_to "Comment",post_path(post,@comments) %>
+          </li>
       </div>
     </li>
   <% end %>

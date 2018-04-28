@@ -1,15 +1,87 @@
-<h1>メッセージ一覧</h1>
+<div class="text-center">
+  <h1>AllPosts</h1>
+</div>
 
-<% @all_posts.each do |all_post| %>
-  <% @all_users.each do |all_user| %>
-    <table>
-      <tr>
-        <td><%= image_tag all_user.image_url %></td>
-        <td><%= all_user.name %></td>
-        <td><%= all_post.content %></td>
-      </tr>
-    </table>
+<ul class="media-list post_font">
+  <% @all_posts.each do |all_post| %>
+      <li class="media">
+        <div class="media-left posts_img">
+          <%= image_tag all_post.user.image_url %>
+        </div>
+        <div class="media-body post-body">
+          <ul>
+            <li class="name_font"><%= link_to "@"+all_post.user.name, user_path(all_post.user) %></li>
+            <% if logged_in? %>
+              <li class="favorite"><%= render 'favorites/favorite_button',user: @user, post: all_post %></li>
+            <% end %>
+          </ul>
+          <div class="post_main">
+            <p><%= all_post.content %></p>
+            <p><%= image_tag all_post.image %></p>
+          </div>
+          <ul class="post_under">
+           <li class="text-muted font_tc"><%= all_post.created_at %></li>
+           <li class="post_delete font_tc">
+            <%= link_to "Comment",post_path(all_post,@comments) %>
+            </li>
+        </div>
+      </li>
   <% end %>
-<% end %>
+</ul>
 
-<%= paginate @all_users %>
+<%= paginate @all_posts %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<ul class="media-list post_font">-->
+<!--  <#% @all_posts.each do |all_post| %>-->
+<!--    <#% @all_users.each do |all_user| %>-->
+<!--      <li class="media">-->
+<!--        <div class="media-left posts_img">-->
+<!--          <#%= image_tag all_user.image_url %>-->
+<!--        </div>-->
+<!--        <div class="media-body post-body">-->
+<!--          <ul>-->
+<!--            <li class="name_font"><#%= link_to "@"+all_post.user.name, user_path(all_post.user) %></li>-->
+            <!--<li class="favorite"><#%= render 'favorites/favorite_button',all_user: @all_user, post: post %></li>-->
+<!--          </ul>-->
+<!--          <div class="post_main">-->
+<!--            <p><#%= all_post.content %></p>-->
+<!--            <p><#%= image_tag all_post.image %></p>-->
+<!--          </div>-->
+<!--          <ul class="post_under">-->
+<!--           <li class="text-muted"><#%= all_post.created_at %></li>-->
+<!--           <li class="post_delete">-->
+<!--            <#%= link_to "Comment",post_path(all_post,@comments) %>-->
+<!--            </li>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--    <#% end %>-->
+<!--  <#% end %>-->
+<!--</ul>-->
+
+<!--<#%= paginate @all_posts %>-->
+
+
+
+
+

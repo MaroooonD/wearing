@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'all_posts/index'
 
   root to: 'toppages#index'
   
-  #root to: 'picture_stores#index'
   resources :picture_stores
   resources :stores
   
@@ -24,10 +22,14 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts, only: [:index, :show, :create, :destroy]
   resources :all_posts, only: [:index]
   resources :relationships, only: [:create, :destroy]
   resources :favorites,only: [:create, :destroy]
   resources :comments, only: [:index,:create,:destroy]
   resources :photos
+  
+  
+  resources :posts, only: [:index, :new, :create, :destroy, :show] do
+    resources :comments,only: [:new,:create,:destroy]
+  end
 end

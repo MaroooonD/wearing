@@ -1,0 +1,32 @@
+.follow_font {
+  font-size: 30px;
+}
+
+.follow_main {
+  float: right;
+  width: 1000px;
+  border-radius: 10px;
+  background-color: #c1ebff;
+  margin-top: 0px;
+  padding: 20px 25px 25px 25px;
+}
+
+.follow_body img{
+    margin-top: 50px;
+}
+
+.follow_img img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.follow_profile {
+    float: right;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.a li {
+    display: inline-block;
+}

@@ -1,6 +1,5 @@
 class AllPostsController < ApplicationController
   def index
-    @all_posts = Post.all.page(params[:page]).per(3)
-    @all_users = User.all.page(params[:page]).per(3)
+    @all_posts = Post.all.order('created_at DESC').page(params[:page]).per(5)
   end
 end

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    flash[:danger] = "プロフィールを入力してください。" if @user.profile.empty?
+    flash[:danger] = "プロフィールを入力してください。" if @user.profile.blank?
     @posts = @user.posts.order('created_at DESC').page(params[:page])
     counts(@user)
   end

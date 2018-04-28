@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*===================================
+ * css file for "moonyworks.com"
+ * file name : reset.css
+===================================== */
+
+body {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳＰゴシック", sans-serif;
+}
+body, div, ul, li, h1, h2, h3, h4, h5, h6, form, p {
+	margin: 0;
+	padding: 0;
+}
+img {
+	border: 0;
+}
+ol, ul {
+	list-style: none;
+}
+/*
+hrタグを非表示にする記述だが今は使わない
+hr {display:none;} 
+*/
+
+/* ===================
+new clearfix 
+===================*/  
+.clearfix:after {
+	visibility: hidden;/*見えなくする*/
+	height: 0;/*見えなくする*/
+	display: block;/*block要素にする*/
+	font-size: 0;
+	content: " ";
+	clear: both;
+}
+* html .clearfix {
+	zoom: 1;
+} /* IE6 */
+*:first-child+html .clearfix {
+	zoom: 1;
+} /* IE7 */
+/* ===================
+リストタグ内の画像の余白をクリア
+===================*/
+li img {
+	font-size: 0;
+	line-height: 0;
+	vertical-align: top;
+}
+/* ===================
+スクロールバーの有・無によるページのズレを防ぐ
+===================*/
+*html body {
+	overflow-y: auto;
+}
+*+html body {
+	overflow-y: auto;
+}
+body {
+	overflow-y: scroll;
+}
