@@ -50,6 +50,8 @@ li img {
 /* ===================
 スクロールバーの有・無によるページのズレを防ぐ
 ===================*/
+
+/*
 *html body {
 	overflow-y: auto;
 }
@@ -59,3 +61,5 @@ li img {
 body {
 	overflow-y: scroll;
 }
+
+*/
