@@ -1,5 +1,9 @@
-.jumbotron_img { 
-  background:url(top50_01.png) center no-repeat; 
-  background-size: cover;
-  height: 600px;
+/*.top_img { */
+/*  background:url(top50_01.png) center no-repeat; */
+/*  background-size: cover;*/
+/*  height: 600px;*/
+/*}*/
+
+.top_img img{
+  width: 100%;
 }
