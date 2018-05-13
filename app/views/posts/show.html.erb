@@ -6,15 +6,14 @@
         </div>
       </div>
     </aside>
-    <div class="col-xs-8">
-      <ul class="name_favorite">
+      <ul class="col-xs-8 name_favorite">
         <li><%= link_to "@"+@post.user.name, user_path(@post.user) %></li>
         <li class="favorite_com"><%= render 'favorites/favorite_button',user: @user, post: @post %></li>
-      </ul>
-      <div>
         <p class="font_20px"><%= @post.content %></p>
-      </div>
-    </div>
+      </ul>
+      <!--<div>-->
+      <!--  <p class="font_20px"><#%= @post.content %></p>-->
+      <!--</div>-->
     <div class="col-xs-12">
       <%= render 'comments/form', post: @post %>
       <%= render 'comments/index', post: @post %>

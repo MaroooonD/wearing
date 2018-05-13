@@ -1,18 +1,31 @@
-<h1>コメント一覧</h1>
 
-<% post.comments.each do |comment| %>
-  <% next unless comment.persisted? %><!--DB未保存なcommentオブジェクトだったら、次のループへnext-->
-  <table>
-    <tr>
-      <td><%= image_tag comment.image_url %></td>
-      <td>
-        <!--<#%= comment.inspect %>-->
-        <%= link_to comment.user.name, user_path(comment.user) %>
-      </td>
-      <td><%= comment.content %></td>
-      <% if current_user == comment.user %>
-        <%= link_to "Delete", post_comment_path(post,comment), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
-      <% end %>
-    </tr>
-  </table>
-<% end %>
+
+<ul class="media-list post_font">
+  <% post.comments.each do |comment| %>
+  <% next unless comment.persisted? %>
+  <li class="media">
+      <div class="media-left posts_img">
+        <%= image_tag comment.user.image_url %>
+      </div>
+      <div class="media-body post-body">
+        <ul>
+          <li class="name_font"><%= link_to "@"+comment.user.name, user_path(comment.user) %></li>
+          <li class="favorite"><%= render 'favorites/favorite_button',user: @user, post: post %></li>
+        </ul>
+        <div class="post_main">
+          <p><%= comment.content %></p>
+          <% if comment.image.present? %>
+            <p><%= image_tag comment.image %></p>
+          <% end %>
+        </div>
+        <ul class="post_under">
+         <li class="text-muted font_tc"><%= post.created_at %></li>
+         <li class="post_delete font_tc">
+          <% if current_user == comment.user %>
+            <%= link_to "Delete", post_comment_path(post,comment), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+          <% end %>
+         </li>
+       </div>
+   </li>
+   <% end %>
+</ul>

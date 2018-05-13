@@ -9,7 +9,7 @@
 }
 
 .name_favorite {
-    height: 30px;
+    height: 200px;
 }
 
 .name_favorite li {
@@ -22,3 +22,9 @@
 
 
 /*  コメントフォーム */
+
+
+.comment_form {
+    margin: 0 auto;
+    height: 200px;
+}

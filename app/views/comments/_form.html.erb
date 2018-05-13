@@ -1,15 +1,17 @@
-<aside class="col-xs-6">
-  <%= form_for [post,post.comments.build] do |f| %>
-    <div class="form-group">
-      <%= f.label :comment, 'Comment' %>
-      <%= f.text_field :content, class: 'form-control', rows: 15 %>
-    </div>
-</aside>
-<aside class="col-xs-6">
-    <div class="form-group">
-      <%= f.file_field :image %><br>
-    </div>
-    <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
-    <%= render 'layouts/error_messages', model: f.object %>
-  <% end %>
-</aside>
+<div class="comment_form">
+  <aside class="col-xs-12">
+    <%= form_for [post,post.comments.build] do |f| %>
+      <div class="form-group">
+        <%= f.label :comment, 'Comment' %>
+        <%= f.text_field :content, class: 'form-control', rows: 15 %>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :image %><br>
+      </div>
+    <aside class="col-xs-12">
+      <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
+      <%= render 'layouts/error_messages', model: f.object %>
+    <% end %>
+  </aside>
+  </aside>
+</div>
