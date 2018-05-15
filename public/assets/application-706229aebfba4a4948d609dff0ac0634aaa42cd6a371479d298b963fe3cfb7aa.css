@@ -1,0 +1,351 @@
+.post_comment img {
+    width: 100%;
+    height: 100%;
+}
+
+.favorite_com {
+    float:right;
+    margin-right: 20px;
+}
+
+.name_favorite {
+    height: 200px;
+}
+
+.name_favorite li {
+    display: inline-block;
+}
+
+.font_30px {
+    font-size: 30px;
+}
+
+
+/*  コメントフォーム */
+
+
+.comment_form {
+    margin: 0 auto;
+    height: 200px;
+}
+
+
+.main {
+  width: 100%;
+ }
+ 
+ .navbar_top {
+   position: relative;
+   min-height: 50px;
+   border: 1px solid transparent;
+ }
+ 
+ .headline {
+   font-size: 30px;
+   font: bold;
+ }
+ 
+ .magin_top_30px {
+   margin-top: 30px;
+ }
+ 
+ .para {
+   width: 50%;
+   height: 70px;
+   margin: 0;
+   padding: 0;
+   float: left;
+ }
+ 
+ .back {
+   background-color: #e0ffff;
+   height: 50px;
+   width:500px;
+ }
+ 
+ 
+ .font_20px {
+   font-size: 20px;
+ }
+ 
+ .font_position {
+   margin: 25px 0px 0px 30px;
+   float: left;
+ }
+ 
+ .icon {
+   width:32px;
+   height: 32px;
+   margin-top: 20px;
+   float: left;
+ }
+ 
+ 
+ .float_left {
+   float: left;
+ }
+ 
+ 
+ .can_do {
+     max-width: 1100px;
+     min-width: 500px;
+     max-height: 1000px;
+     min-height: 600px;
+     margin: 0 auto;
+ }
+ 
+.enclose img {
+    width: 300px;
+    height: 400px;
+}
+
+.margin_lr {
+    margin: 0 50px;
+}
+.follow_font {
+  font-size: 30px;
+}
+
+.follow_main {
+  float: right;
+  width: 1000px;
+  border-radius: 10px;
+  background-color: #c1ebff;
+  margin-top: 0px;
+  padding: 20px 25px 25px 25px;
+}
+
+.follow_body img{
+    margin-top: 50px;
+}
+
+.follow_img img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.follow_profile {
+    float: right;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.a li {
+    display: inline-block;
+}
+.posts_img img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.post_main {
+  float: right;
+  width: 1000px;
+  border-radius: 10px;
+  background-color: #c1ebff;
+  margin-top: 0px;
+  padding: 20px 25px 25px 25px;
+}
+
+.post-body li {
+  display: inline-block;
+}
+
+.post-body p,.post_under {
+  margin-left: 50px;
+}
+
+.post_under {
+  padding-bottom: 10px;
+}
+
+.favorite,.post_delete {
+  float: right;
+}
+
+.name_font,.posts_img img,.favorite,.follow_profile {
+  margin-top: 50px;
+}
+
+.post_font {
+  font-size: 30px;
+}
+
+.name_font {
+  font-size: 20px;
+  padding-left: 40px;
+}
+
+.font_tc {
+  font-size: 20px;
+}
+.post_main img {
+  max-height: 600px;
+  max-width: 850px;
+}
+.post_index {
+  margin-top: 20px;
+}
+/*@charset "utf-8";*/
+/*===================================*/
+/* * css file for "moonyworks.com"*/
+/* * file name : reset.css*/
+/*===================================== */
+
+/*body {*/
+/*	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳＰゴシック", sans-serif;*/
+/*}*/
+/*body, div, ul, li, h1, h2, h3, h4, h5, h6, form, p {*/
+/*	margin: 0;*/
+/*	padding: 0;*/
+/*}*/
+/*img {*/
+/*	border: 0;*/
+/*}*/
+/*ol, ul {*/
+/*	list-style: none;*/
+/*}*/
+
+/*hrタグを非表示にする記述だが今は使わない*/
+/*hr {display:none;} */
+
+
+/* ===================*/
+/*new clearfix */
+/*===================*/
+/*.clearfix:after {*/
+
+	visibility: hidden;/*見えなくする
+	height: 0;/*見えなくする
+	display: block;/*block要素にする
+	font-size: 0;
+	content: " ";
+	clear: both;
+}
+* html .clearfix {
+	zoom: 1;
+} /* IE6 
+*:first-child+html .clearfix {
+	zoom: 1;
+} /* IE7 
+ ===================
+リストタグ内の画像の余白をクリア
+===================
+li img {
+	font-size: 0;
+	line-height: 0;
+	vertical-align: top;
+}
+ ===================
+スクロールバーの有・無によるページのズレを防ぐ
+===================
+
+
+*html body {
+	overflow-y: auto;
+}
+*+html body {
+	overflow-y: auto;
+}
+body {
+	overflow-y: scroll;
+}
+
+
+/*.top_img { */
+/*  background:url(top50_01.png) center no-repeat; */
+/*  background-size: cover;*/
+/*  height: 600px;*/
+/*}*/
+
+/*.top_img img,.top_img {*/
+/*  width: 100%;*/
+/*}*/
+
+
+.top_img {
+  width: 100%;
+  height: 0;
+  padding-top: calc(450 / 1000 * 100%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
+  background: url(top_big.png) center center / cover no-repeat;
+}
+
+.text_center {
+  text-align: center;
+  height: 1000px;
+  width: 100%;
+}
+
+.main_wrapper {
+  width: 100%;
+  height: 1000px;
+}
+.main_visual {
+  width: 100%;
+  height: 600px;
+}
+
+.main_img img{
+  position: absolute;
+  top: 0%;
+  width: 100%;
+}
+
+.main_img {
+  height: 600px;
+  display: block;
+}
+.expensive {
+  height: 200px;
+  margin-top: 200px;
+}
+
+.solve {
+  height: 500px;
+  margin-top: 200px;
+}
+#advise {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+#advise dt {
+    font-size: 25px;
+    margin-top: 15px;
+}
+#advise dd {
+    margin-top: 15px;
+    font-size:18px;
+}
+
+.solve p {
+    margin-top: 100px;
+    font-size: 30px;
+    margin-bottom: 100px;
+}
+ .profile img {
+   width: 100%;
+   height: 100%;
+ }
+ 
+ .profile p {
+  font-size: 30px;
+ }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
